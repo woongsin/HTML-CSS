@@ -5,11 +5,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
-.ithem_wrap {
+.item_wrap {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 .item {
     width: calc(25% - 7px);
@@ -17,7 +18,7 @@ html, body {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    flex-direction: row;
+    margin-bottom: 15px;
 }
 .img_box {
     width: 100%;
@@ -50,11 +51,13 @@ html, body {
     font-size: 22px;
     font-weight: 500;
     opacity: 0;
+    transform: translateY(50px);
 }
 .text_box__price {
     font-size: 16px;
     font-weight: 400;
     opacity: 0;
+    transform: translateY(50px);
 }
 .item:after {
     content: "";
@@ -70,9 +73,11 @@ html, body {
 }
 .item:hover .text_box__name {
     opacity: 1;
+    transform: translateY(0);
 }
 .item:hover .text_box__price {
     opacity: 1;
+    transform: translateY(0);
 }
 .item:hover:after {
     opacity: 1;
@@ -86,4 +91,7 @@ html, body {
 .item .text_box__name,
 .item .text_box__price {
     transition: all 0.4s ease-in-out;
+}
+.item .text_box__price {
+    transition: all 0.4s ease-in-out 0.13s;
 }
